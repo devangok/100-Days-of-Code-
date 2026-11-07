@@ -1,0 +1,21 @@
+﻿#include <stdio.h>
+#include <string.h>
+
+enum Operation { ADD, SUBTRACT, MULTIPLY };
+
+int main() {
+    char op_str[20];
+    int a, b;
+    scanf("%s %d %d", op_str, &a, &b);
+    enum Operation op;
+    if (strcmp(op_str, "ADD") == 0) op = ADD;
+    else if (strcmp(op_str, "SUBTRACT") == 0) op = SUBTRACT;
+    else op = MULTIPLY;
+
+    switch (op) {
+        case ADD: printf("%d\n", a + b); break;
+        case SUBTRACT: printf("%d\n", a - b); break;
+        case MULTIPLY: printf("%d\n", a * b); break;
+    }
+    return 0;
+}
